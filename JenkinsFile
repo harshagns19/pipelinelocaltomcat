@@ -15,17 +15,12 @@ pipeline {
 			steps{
 				
 				echo 'stage 2 Deploy'
-				bat 'mvn install'
-				withCredentials([[$class				:'UsernamePasswordMultiBinding',
-								   credentialsId		:'PCF_LOGIN',
-								   usernameVariable		:'USERNAME',
-								   passwordVariable		:'PASSWORD']]){
-								   
-								   echo 'username is $USERNAME'
-									  bat 'cf login -a http://api.run.pivotal.io -u g.n.s.harsha@gmail.com -p Pivotal123$'
-									  bat 'cf push'
+				
+				echo 'copying the war file from jenkins to tomcat'
+				bat 'cp C:\\Program Files (x86)\\Jenkins\\workspace\\jenkins-freestyle-tomcat\\target\\*.war C:\\Program Files (x86)\\apache-tomcat-9.0.37\\webapps\\ '
+									  
 								
-								   }
+								  
 	}
 	
 	}
