@@ -21,6 +21,7 @@ pipeline {
 									  
 								
 								  
+			}
 		}
 		
 		stage('Test URL'){
@@ -32,7 +33,7 @@ pipeline {
 			}
 		}
 	
-	}
+	
 	
 	
 }
