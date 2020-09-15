@@ -21,7 +21,16 @@ pipeline {
 									  
 								
 								  
-	}
+		}
+		
+		stage('Test URL'){
+			steps {
+				
+				echo 'stage 3'
+				response = sh 'curl http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/'
+				echo "response is "+response
+			}
+		}
 	
 	}
 	
