@@ -1,6 +1,6 @@
 ---
 applications:
-- name: jenkins-deployment-pcf
+- name: pipelinelocaltomcat
   instances: 1
   memory: 800m
-  path: target/cicd-jenkins-example-0.0.1-SNAPSHOT.jar
+  path: target/GLPProject-0.0.1-SNAPSHOT.war
