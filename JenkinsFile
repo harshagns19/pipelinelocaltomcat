@@ -29,14 +29,14 @@ pipeline {
 				
 				echo 'stage 3'
 				script {
-					def status=$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/)
-					echo "status is "+status
-					if [ $status -eq 200 ]; then
-    						echo "Got 200! Website is up and running"
-   						 break
- 					 else
-  						  echo "Website is not reachable"
- 					 fi
+					final String url = "http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/"
+
+                    			final String response = sh(script: "curl -s $url", returnStdout: true).trim()
+
+                    			echo "response is "+response
+					
+					final String respCode='$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/)'
+					echo "respCode is "+respCode
 				}
 			}
 		}
