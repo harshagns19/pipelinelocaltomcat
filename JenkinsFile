@@ -17,7 +17,7 @@ pipeline {
 				echo 'stage 2 Deploy'
 				
 				echo 'copying the war file from jenkins to tomcat'
-				bat 'cp C:\\Program Files (x86)\\Jenkins\\workspace\\jenkins-freestyle-tomcat\\target\\*.war C:\\Program Files (x86)\\apache-tomcat-9.0.37\\webapps\\ '
+				bat 'cp C:\\Program Files (x86)\\Jenkins\\workspace\\jenkins-pipeline-tomcat\\target\\*.war C:\\Program Files (x86)\\apache-tomcat-9.0.37\\webapps\\ '
 									  
 								
 								  
