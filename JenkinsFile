@@ -28,12 +28,14 @@ pipeline {
 			steps {
 				
 				echo 'stage 3'
-				final String url = "http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/"
+				script {
+					final String url = "http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/"
 
-                    		final String response = sh(script: "curl -s $url", returnStdout: true).trim()
+                    			final String response = sh(script: "curl -s $url", returnStdout: true).trim()
 
-                    		echo response
-				echo "response is "+response
+                    			
+					echo "response is "+response
+				}
 			}
 		}
 	
