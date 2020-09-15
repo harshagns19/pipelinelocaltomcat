@@ -29,9 +29,9 @@ pipeline {
 				
 				echo 'stage 3'
 				script {
-					status=$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/)
+					def status=$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/)
 					echo "status is "+status
-					if [ $STATUS -eq 200 ]; then
+					if [ $status -eq 200 ]; then
     						echo "Got 200! Website is up and running"
    						 break
  					 else
