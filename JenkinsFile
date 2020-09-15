@@ -28,7 +28,11 @@ pipeline {
 			steps {
 				
 				echo 'stage 3'
-				def response = sh 'curl https://some-host/some-service/getApi?apikey=someKey'
+				final String url = "http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/"
+
+                    		final String response = sh(script: "curl -s $url", returnStdout: true).trim()
+
+                    		echo response
 				echo "response is "+response
 			}
 		}
