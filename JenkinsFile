@@ -6,7 +6,7 @@ pipeline {
 		stage('Build'){
 			steps {
 				
-				echo "=============================== From Jenkins File Stage1 ========================================================="
+				echo "=============================== From Jenkins File Build Stage ======================================================"
 				bat 'mvn clean package'
 			}
 		}
@@ -14,7 +14,7 @@ pipeline {
 		stage('Deploy'){
 			steps{
 				
-				echo "=============================== From Jenkins File Deploy ========================================================="
+				echo "=============================== From Jenkins File Deploy Stage ===================================================="
 				
 				echo 'copying the war file from jenkins to tomcat'
 				bat 'copy "C:\\Program Files (x86)\\Jenkins\\workspace\\jenkins-pipeline-tomcat\\target\\*.war" "C:\\Program Files (x86)\\apache-tomcat-9.0.37\\webapps\\"'
@@ -27,7 +27,7 @@ pipeline {
 		stage('Test URL'){
 			steps {
 				
-				echo "=============================== From Jenkins File Test ========================================================="
+				echo "=============================== From Jenkins File Test Stage ====================================================="
 				script {
 					final String url = "http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/"
 
