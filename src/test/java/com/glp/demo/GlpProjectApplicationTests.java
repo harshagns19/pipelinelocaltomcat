@@ -21,7 +21,7 @@ class GlpProjectApplicationTests {
 	
 	@Test
 	public void openURL() {
-		System.out.println("Inside open url");
+		System.out.println("========= Starting the Testing after the Build ==============");
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Naga.Gundabathula\\Downloads\\geckodriver-v0.27.0-win64\\geckodriver.exe");
 		FirefoxDriver driver = new FirefoxDriver();
 		
@@ -34,8 +34,8 @@ class GlpProjectApplicationTests {
 		
 		File src = driver.getScreenshotAs(OutputType.FILE);
 		File dest = new File("verifyAppStatus.jpg");
-		System.out.println("Source of the file is "+src);
-		System.out.println("Destination of the file is "+dest);
+		System.out.println("========= Source of the file is ============================= "+src);
+		System.out.println("========= Destination of the file is ======================== "+dest);
 		try {
 			Files.copy(src, dest);
 			Files.copy(homePage, homePageScreenshot);
