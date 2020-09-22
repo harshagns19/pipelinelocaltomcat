@@ -1,5 +1,5 @@
 echo "=============================== From checkStatus.sh File ========================================================="
-echo "================ sleep fpr 10 secs so the application will be up and runninf after the deployment ================"
+echo "================ Sleep for 10 secs so the application will be up and running after the deployment ================"
 sleep 10s
 echo $PWD
 responseCode=$(curl -o /dev/null -s -w "%{http_code}\n" http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/)
