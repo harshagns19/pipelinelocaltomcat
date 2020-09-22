@@ -33,6 +33,8 @@ class GlpProjectApplicationTests {
 		
 		File src = driver.getScreenshotAs(OutputType.FILE);
 		File dest = new File("verifyAppStatus.jpg");
+		System.out.println("Source of the file is "+src);
+		System.out.println("Destination of the file is "+dest);
 		try {
 			Files.copy(src, dest);
 		} catch (IOException e) {
