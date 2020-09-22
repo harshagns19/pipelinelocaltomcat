@@ -16,7 +16,7 @@ pipeline {
 				
 				echo "=============================== From Jenkins File Deploy Stage ===================================================="
 				
-				echo 'copying the war file from jenkins to tomcat'
+				echo '=============================== Copying the war file from jenkins to tomcat ======================================='
 				bat 'copy "C:\\Program Files (x86)\\Jenkins\\workspace\\jenkins-pipeline-tomcat\\target\\*.war" "C:\\Program Files (x86)\\apache-tomcat-9.0.37\\webapps\\"'
 									  
 								
@@ -33,9 +33,9 @@ pipeline {
 
                     			final String response = sh(script: "curl -s $url", returnStdout: true).trim()
 
-                    			echo "response is "+response
+                    			echo "================================================================================response is "+response
 					
-					echo "Calling the Script for Response code and Response Text "+response
+					echo "=============================================== Calling the Script for Response code and Response Text "
 					
 					sh "./checkStatus.sh $url"
 				}
