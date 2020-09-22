@@ -28,8 +28,9 @@ class GlpProjectApplicationTests {
 		driver.manage().window().maximize();
 		
 		driver.get("http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/");
+		File homePage = driver.getScreenshotAs(OutputType.FILE);
+		File homePageScreenshot = new File("homePageScreenshot");
 		driver.findElement(By.xpath("//a[text()='Click Me']")).click();
-		System.out.println("After testing");
 		
 		File src = driver.getScreenshotAs(OutputType.FILE);
 		File dest = new File("verifyAppStatus.jpg");
@@ -37,6 +38,7 @@ class GlpProjectApplicationTests {
 		System.out.println("Destination of the file is "+dest);
 		try {
 			Files.copy(src, dest);
+			Files.copy(homePage, homePageScreenshot);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
