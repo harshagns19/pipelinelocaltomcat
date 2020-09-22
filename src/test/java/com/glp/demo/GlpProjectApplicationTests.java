@@ -30,7 +30,7 @@ class GlpProjectApplicationTests {
 		driver.get("http://localhost:8080/GLPProject-0.0.1-SNAPSHOT/");
 		File homePage = driver.getScreenshotAs(OutputType.FILE);
 		File homePageScreenshot = new File("homePageScreenshot.jpg");
-		//driver.findElement(By.xpath("//a[text()='Click Me']")).click();
+		driver.findElement(By.xpath("//a[text()='Click Me']")).click();
 		
 		File src = driver.getScreenshotAs(OutputType.FILE);
 		File dest = new File("verifyAppStatus.jpg");
